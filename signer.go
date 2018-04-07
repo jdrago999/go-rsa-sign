@@ -22,7 +22,7 @@ func NewSigner(pemKey []byte) (*Signer, error) {
 }
 
 func (s *Signer) Sign(data []byte) ([]byte, error) {
-	hash := crypto.SHA1
+	hash := crypto.SHA256
 	h := hash.New()
 	h.Write(data)
 	hashed := h.Sum(nil)
